@@ -1,12 +1,30 @@
-# JSR2020_D4PG
-Open-sourced deep guidance implementation using the D4PG algorithm for spacecraft proximity operations as detailed in Hovell and Ulrich's JSR 2020 paper under review titled "Deep Reinforcement Learning for Spacecraft Proximity Operations Guidance"
+# Phase1-DRL
 
-Built on Tensorflow 1.12.0
+Using the files from Kirkados' JSR2020_D4PG as a base for DRL-based guidance of spacecraft proximity operations trained via D4PG.
 
-To run, optionally modify settings in environment_envs123456.py and settings.py. Then run python3 on main.py to begin training.
+Set-up coding environment as described below. This has been tested using Python 3.6.8 on Windows10 and Python 3.6.13 in a Conda environment on Ubuntu 20.04.6 LTS.
 
-Deep reinforcement learning is used to train a neural network to output velocity commands for a spacecraft to track using a conventional controller. This "deep guidance" technique is a possible solution to the simulation-to-reality problem. The task-solving ability of deep reinforcement learning is harnessed along with the ability of conventional control to perform well under model uncertainty.
+    pip install tensorflow-gpu==1.12.0
+    pip install tensorflow==1.12.0
+    pip install protobuf==3.19.6
+    pip install psutil
+    pip install pyvirtualdisplay
+    pip install scipy==1.5.2
+    pip install matplotlib
+    pip uninstall numpy
+    pip install numpy==1.16.4
+    pip install ffmpeg-python
+    pip install shapely==1.8.5.post1
 
-A video showing simulated and experimental results can be found here: https://youtu.be/n7K6aC5v0aY
+In Windows: extract, add bin folder to PATH: https://github.com/GyanD/codexffmpeg/releases/tag/2022-03-28-git-5ee198f9aa
 
-Feel free to contact me if you have any questions! khovell@gmail.com
+To train a model, modify settings in environment_envs123456.py and settings.py. Then run 
+
+Windows:
+    
+    py main.py
+
+Ubuntu:
+
+    python main.py
+
